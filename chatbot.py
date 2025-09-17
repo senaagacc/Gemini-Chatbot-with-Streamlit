@@ -1,8 +1,9 @@
 import google.generativeai as genai
+import os
 
-genai.configure(api_key="AIzaSyCL4YpXB7Fx3uk5-JB4WAwZroImHURJamU")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-model = genai.GenerativeModel("gemini-1.5-flash")
+model = genai.GenerativeModel("gemini-1.5-turbo")
 
 def get_response(user_input):
     """Kullanıcı mesajını alır ve modelden cevap döndürür."""
